@@ -55,7 +55,7 @@ El juego se desarrolla por turnos, donde cada acción (Explorar, Viajar, Comer o
 ## 🛠️ Estructura del Proyecto
 
 * `index.html`: Estructura principal, *modals* (selección, *game over*) y elementos de interfaz de Bootstrap.
-* `simuladorMision.js`: Toda la lógica del juego, manejo de estados, cálculos de consumo/daño y *event listeners*.
+* `simulador_mision.js`: Toda la lógica del juego, manejo de estados, cálculos de consumo/daño y *event listeners*.
 * `style.css`: Estilos personalizados, incluyendo el *overlay* de fondo espacial semi-transparente para mejorar la legibilidad.
 
 ---
@@ -74,6 +74,7 @@ El proyecto utiliza las siguientes librerías a través de CDN:
 [Irina Serey (kserey)](https://github.com/kserey)
 
 [LinkedIn](https://www.linkedin.com/in/irina-serey/)
+
 
 
 
