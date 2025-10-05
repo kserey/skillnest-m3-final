@@ -72,6 +72,8 @@ El proyecto utiliza las siguientes librerías a través de CDN:
 ## 🧑‍💻 Autor
 
 [Irina Serey (kserey)](https://github.com/kserey)
+
 [LinkedIn](https://www.linkedin.com/in/irina-serey/)
+
 
 
