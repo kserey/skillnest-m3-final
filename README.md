@@ -2,7 +2,8 @@
 
 ## Introducción
 
-Este proyecto es un simulador de gestión de recursos y toma de decisiones desarrollado en **JavaScript, HTML y CSS (Bootstrap)**, creado como parte de un *bootcamp* de desarrollo web. El objetivo principal es que el usuario gestione una tripulación y los recursos de una nave para alcanzar una base lejana antes de que se agoten los suministros o toda la tripulación muera por desgaste.
+Este proyecto es un simulador de gestión de recursos y toma de decisiones desarrollado en **JavaScript, HTML y CSS (Bootstrap)**, creado como parte del *bootcamp* Full Stack Javascript de Skillnest año 2025.
+El objetivo principal es que el usuario gestione una tripulación y los recursos de una nave para alcanzar una base lejana antes de que se agoten los suministros o toda la tripulación muera por desgaste.
 
 ---
 
@@ -70,6 +71,7 @@ El proyecto utiliza las siguientes librerías a través de CDN:
 
 ## 🧑‍💻 Autor
 
-[Tu Nombre / Tu Alias de GitHub]
+[Irina Serey (kserey)](https://github.com/kserey)
+[LinkedIn](https://www.linkedin.com/in/irina-serey/)
 
-[Tu Enlace de Perfil de LinkedIn o Portafolio]
+
