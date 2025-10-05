@@ -1,10 +1,10 @@
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?_gl=1*rn7zx*_ga*NjY4ODQ3MDU1LjE3NTk2MjYxNjM.*_ga_8JE65Q40S6*czE3NTk2MjYxNjIkbzEkZzEkdDE3NTk2MjY3MjEkajgkbDAkaDA.'); 
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?_gl=1*rn7zx*_ga*NjY4ODQ3MDU1LjE3NTk2MjYxNjM.*_ga_8JE65Q40S6*czE3NTk2MjYxNjIkbzEkZzEkdDE3NTk2MjY3MjEkajgkbDAkaDA.');  */
+    background-image: url('../img/bg_space.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #eee;
 }
 
 .tripulante-muerto {
