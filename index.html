@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Misión Espacial</title>
+
+        <!-- BOOSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- ICONS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/CSS/style.css">
+
+    </head>
+    <body class="bg-dark text-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand"><i class="bi bi-rocket-fill me-2"></i>Simulador de Misión Espacial</a>
+            </div>
+        </nav>
+        <div class="container my-4">
+
+            <div class="row mb-4 align-items-stretch">
+                <div class="col-md-4 d-flex">
+                    <div class="w-100">
+                        <h3 class="text-primary">Objetivo</h3>
+                        <div id="objetivo" class="objetivo h-100"></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 d-flex">
+                    <div class="w-100">
+                        <h3>Estado de la Nave</h3>
+                        <div id="estadoNave" class="h-100"></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 d-flex">
+                    <div class="w-100">
+                        <h3>Tripulación</h3>
+                        <div id="estadoTripulacion" class="h-100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-10 col-lg-8">
+                    <div class="p-3 border border-primary rounded-3 text-center action-panel">
+                        <h4>🕹️ Panel de Mando 🕹️</h4>
+                        <div class="d-flex justify-content-center flex-wrap">
+                            <button id="btnExplorar" class="btn btn-info m-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Consume 1 Comida y 2 Agua por tripulante. Busca recursos o activa eventos.">🔍 Explorar</button>
+                            <button id="btnViajar" class="btn btn-primary m-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Consume Combustible y avanza. Consume 1 Comida y 1 Agua por tripulante.">🚀 Viajar</button>
+                            <button id="btnComer" class="btn btn-success m-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Consume 1 Comida y 1 Agua por tripulante. Recupera mucha Salud.">🍽️ Comer</button>
+                            <button id="btnDescansar" class="btn btn-warning m-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Consume 1 Comida y 1 Agua por tripulante. Recupera poca Salud.">🛌 Descansar</button>
+                        </div>
+                        <hr class="text-primary">
+                        <div class="d-flex justify-content-center flex-wrap">
+                            <button id="btnReiniciar" class="btn btn-danger m-2">Reiniciar Misión</button>
+                            <button id="btnNuevaMision" class="btn btn-success m-2 d-none">Nueva Misión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Registro de Eventos</h4>
+            <div id="logEventos" class="border p-2 bg-secondary rounded"></div>
+        </div>
+
+        <!-- MODAL SELECCIÓN -->
+        <div class="modal fade" id="modalSeleccion" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content bg-dark text-light">
+                    
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalSeleccionLabel">Bienvenido a la Misión</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    
+                    <div class="modal-body text-center">
+                        <h4 class="mb-3 text-warning">Objetivo de la Misión:</h4>
+                        
+                        <p class="h5 mb-4 text-success fw-bold">
+                            <i class="bi bi-star-fill me-2"></i> 
+                            Llegar a la base Omega con al menos un tripulante con vida.
+                        </p>
+                        
+                        <hr class="text-secondary">
+                        
+                        <h5 class="mt-4">Selección de Tripulación</h5>
+                        <p class="mb-4">
+                            <strong>Elije 4 tripulantes</strong> (usando sus habilidades), o presiona <strong>"Equipo aleatorio"</strong> para una selección rápida.
+                        </p>
+                        
+                        <div class="row" id="listaTripulantes"></div>
+                        
+                        <p class="small mt-3">
+                            <i class="bi bi-info-circle-fill me-1"></i> Recuerda: Cada acción consume recursos y la salud de tus tripulantes puede verse afectada por el viaje y los eventos.
+                        </p>
+                    </div>
+                    
+                    <div class="modal-footer justify-content-between">
+                        <button id="btnEquipoAleatorio" class="btn btn-secondary">Equipo aleatorio</button>
+                        <button id="btnIniciarMision" class="btn btn-primary">Iniciar misión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL REINICIO -->
+        <div class="modal fade" id="modalReiniciar" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Reiniciar misión</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Estás seguro de reiniciar la misión? Se perderá el progreso actual.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnConfirmarReinicio" class="btn btn-danger">Reiniciar</button>
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOOSTRAP JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- SCRIPT -->
+        <script src="assets/js/simuladorMision.js"></script>
+
+    </body>
+</html>
